@@ -1,4 +1,4 @@
-<jsp:useBean id="msg" scope="request" type="com.example.springbootstudy.entity.Student"/>
+
 <%--
   Created by IntelliJ IDEA.
   User: Maoyunlong

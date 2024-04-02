@@ -18,13 +18,12 @@ public class TestController {
         //要跳转到的页面视图名称
         return "index";
     }
-    @RequestMapping(value = "/hello")
+    //@RequestMapping(value = "/hello")
     public ModelAndView hello () {
-        logger.info("hello() 方法被调用");
         System.out.println("hello() 方法被调用1");
         ModelAndView mv = new ModelAndView();
-        mv.addObject("message", "Hello, Ma Yuzhe!");
-        mv.setViewName("/WEB-INF/views/hello.jsp");
+        mv.addObject("msg", "Hello, Ma Yuzhe!");
+        mv.setViewName("/hello");
         return mv;
     }
     /*@RequestMapping(value = "/hello/index")
@@ -32,4 +31,10 @@ public class TestController {
         System.out.println("asdfasdfas");
         return "hello";
     }*/
+
+    @RequestMapping(value = "/hello1")
+    public String hello1(){
+        System.out.println("hello.springboot的第一个controller");
+        return "111";
+    }
 }

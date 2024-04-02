@@ -13,17 +13,16 @@ class SpringBootStudyApplicationTests {
     void contextLoads() {
     }
     @Test
-    public void main(String[] args) {
+    public static void main(String[] args) {
         // 创建Spring容器
-        ApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("SpringConfig.xml");
         // 从容器中获取bean
         LogicalService logicalService = context.getBean("landlord",LogicalService.class);
         // 调用bean的方法
         logicalService.service();
-        /*ApplicationContext context =
-                new ClassPathXmlApplicationContext("applicationContext.xml");
-        Landlord landlord = (Landlord) context.getBean("landlord", Landlord.class);
-        landlord.service();*/
+
+        // 关闭Spring容器
+        context.close();
     }
 
 }
